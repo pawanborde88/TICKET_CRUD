@@ -23,6 +23,7 @@ export class CrudticketComponent {
     Ticket_type: " "
 
   }
+
   constructor(private http:HttpClient ,private service: CommonService, private messageService: MessageService, private confirmationService: ConfirmationService,) {
     this.GetAllTickets();
   }
@@ -40,7 +41,7 @@ export class CrudticketComponent {
   }
   Delte_ticket(id: any) {
     this.confirmationService.confirm({
-      message: 'Are you sure ?',
+      message: 'Are you want to Delete ?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.service.Delte_ticket(id).subscribe((res: any) => {

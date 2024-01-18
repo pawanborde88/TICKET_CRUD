@@ -36,7 +36,7 @@
             </button>
 
           </div>
-          <table class="table mt-5 table-hover">
+       <table class="table mt-5 table-hover" >
             <thead class="p-2">
               <tr>
                 <th>Sr.No</th>
@@ -68,9 +68,13 @@
                   <button class="btn btn-danger btn-sm ms-2" (click)="edit_ticket(item.id)"><i
                       class="pi pi-file-edit"></i></button>
                 </td>
+
               </tr>
+
             </tbody>
+
           </table>
+
         </div>
       </div>
     </div>
@@ -170,6 +174,5 @@
     </div>
   </div>
 </div>
-<p-toast></p-toast>
 <p-toast position="top-center" key="tc"></p-toast>
-<p-confirmPopup></p-confirmPopup>
+<p-confirmDialog [style]="{width: '30vw'}"></p-confirmDialog>

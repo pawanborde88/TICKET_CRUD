@@ -13,7 +13,9 @@ import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
-
+import { PaginatorModule } from 'primeng/paginator';
+import { TableModule } from 'primeng/table';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,10 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
     BrowserAnimationsModule,
     MessagesModule,
     ToastModule,
-    ConfirmPopupModule
+    ConfirmPopupModule,
+    PaginatorModule,
+    TableModule,
+    ConfirmDialogModule
   ],
   providers: [MessageService,ConfirmationService,
     provideClientHydration()

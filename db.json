@@ -18,17 +18,6 @@
   },
   "TicketSystem": [
     {
-      "id": 3,
-      "name": " Mayur Kanak",
-      "email": "mayur85@gmail.com",
-      "mobile": "85958785555",
-      "TicketName": "run functions",
-      "TicketNo": "85955",
-      "NoOfTickets": "4",
-      "Ticket_date": "2024-01-16T18:30:00.000Z",
-      "Ticket_type": "New Ticket"
-    },
-    {
       "id": 4,
       "name": " Rohit Shinde",
       "email": "rohit859@gmail.com",
@@ -37,6 +26,50 @@
       "TicketNo": "852",
       "NoOfTickets": "5",
       "Ticket_date": "2024-01-19T18:30:00.000Z",
+      "Ticket_type": "New Ticket"
+    },
+    {
+      "id": 5,
+      "name": " Mayur Desai",
+      "email": "mayur858@gmail.com",
+      "mobile": "8596578595",
+      "TicketName": "Pending",
+      "TicketNo": "8955",
+      "NoOfTickets": "5",
+      "Ticket_date": "2024-01-18T18:30:00.000Z",
+      "Ticket_type": "New Ticket"
+    },
+    {
+      "id": 6,
+      "name": " Rohit Kear",
+      "email": "rohit858@gmail.com",
+      "mobile": "85957895955",
+      "TicketName": "Error",
+      "TicketNo": "89558",
+      "NoOfTickets": "10",
+      "Ticket_date": "2024-01-18T18:30:00.000Z",
+      "Ticket_type": "New Ticket"
+    },
+    {
+      "id": 7,
+      "name": " Shantanu M",
+      "email": "Shantu89@gmail.com",
+      "mobile": "8965483351",
+      "TicketName": "Success",
+      "TicketNo": "8596",
+      "NoOfTickets": "15",
+      "Ticket_date": "2024-01-25T18:30:00.000Z",
+      "Ticket_type": "New Ticket"
+    },
+    {
+      "id": 8,
+      "name": " Ritesh Yadav",
+      "email": "ritesh859@gmail.com",
+      "mobile": "8965558889",
+      "TicketName": "Success",
+      "TicketNo": "8596",
+      "NoOfTickets": "20",
+      "Ticket_date": "2024-01-24T18:30:00.000Z",
       "Ticket_type": "New Ticket"
     }
   ]
