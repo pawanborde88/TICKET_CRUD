@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "TicketSystem": [
+    {
+      "id": 3,
+      "name": " Mayur Kanak",
+      "email": "mayur85@gmail.com",
+      "mobile": "85958785555",
+      "TicketName": "run functions",
+      "TicketNo": "85955",
+      "NoOfTickets": "4",
+      "Ticket_date": "2024-01-16T18:30:00.000Z",
+      "Ticket_type": "New Ticket"
+    },
+    {
+      "id": 4,
+      "name": " Rohit Shinde",
+      "email": "rohit859@gmail.com",
+      "mobile": "859648566",
+      "TicketName": "Add Task",
+      "TicketNo": "852",
+      "NoOfTickets": "5",
+      "Ticket_date": "2024-01-19T18:30:00.000Z",
+      "Ticket_type": "New Ticket"
+    }
+  ]
+}

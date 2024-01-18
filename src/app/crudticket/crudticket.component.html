@@ -1,1 +1,175 @@
-<p>crudticket works!</p>
+<nav class="navbar bg-primary-subtle shadow navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <button class="btn btn-secondary ms-5" (click)="opentickets()">All Tickets</button>
+        </li>
+        <li class="nav-item ">
+          <button class="btn btn-warning  ms-2" (click)="Addnew()">Add New </button>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid mt-5">
+  <div class="row" *ngIf="!visible">
+    <div class="col-12">
+      <div class="card shadow">
+        <div class="card-body bg-body-tertiary text-center">
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-success btn-lg" (click)="Addnew()"><i class="pi pi-plus ms-1"></i>Add New </button>
+            <button type="button" class="btn btn-primary position-relative ms-2">
+              Total Tickets
+              <span class="position-absolute mt-2 top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                <p>{{AllTickets.length}}</p>
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+
+          </div>
+          <table class="table mt-5 table-hover">
+            <thead class="p-2">
+              <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Ticket Name</th>
+                <th>Ticekt No</th>
+                <th>Total Ticket</th>
+                <th>Ticket Date</th>
+                <th>Type</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of AllTickets, let srno=index">
+                <td>{{srno+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.TicketName}}</td>
+                <td>{{item.TicketNo}}</td>
+                <td>{{item.NoOfTickets}}</td>
+                <td>{{item.Ticket_date | date : "dd-MMM-YYY" }}</td>
+                <td>{{item.Ticket_type}}</td>
+                <td>
+                  <button class="btn btn-info btn-sm" (click)="Delte_ticket(item.id)"><i
+                      class="pi pi-trash"></i></button>
+                  <button class="btn btn-danger btn-sm ms-2" (click)="edit_ticket(item.id)"><i
+                      class="pi pi-file-edit"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5" *ngIf="visible">
+  <div class="row">
+    <div class="col-8">
+      <div class="card  shadow mb-5">
+        <div class="card-header p-3 ">
+          <div class="d-flex">
+            <div class="p-2 flex-grow-1 fs-4 fw-bolder text-danger-emphasis">Ticket Request Form</div>
+            <button class="btn btn-success" (click)="opentickets()">Ticket List</button>
+          </div>
+        </div>
+        <div class="card-body bg-light-subtle">
+          <div class="row">
+            <div class="col-6">
+              <label for="" class="fw-semibold">Name</label>
+              <span class="p-input-icon-left">
+                <i class="pi pi-user" style="font-size: 1rem"></i>
+                <input type="text" placeholder="Enter Name" [(ngModel)]="TicketObj.name" pInputText
+                  [style]="{width: '25vw'}" />
+              </span>
+            </div>
+            <div class="col-6">
+              <label for="" class="fw-semibold">Email</label>
+              <span class="p-input-icon-left">
+                <i class="pi pi-envelope"></i>
+                <input type="text" [(ngModel)]="TicketObj.email" pInputText [style]="{width: '25vw'}" />
+              </span>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-6">
+              <label for="" class="fw-semibold">Mobile</label>
+              <span class="p-input-icon-left">
+                <i class="pi pi-phone" style="font-size: 1rem"></i>
+                <input type="text" [(ngModel)]="TicketObj.mobile" pInputText [style]="{width: '25vw'}" />
+              </span>
+            </div>
+            <div class="col-6">
+              <label for="" class="fw-semibold">Ticket Name</label>
+              <span class="p-input-icon-left">
+                <i class="pi pi-ticket"></i>
+                <input type="text" [(ngModel)]="TicketObj.TicketName" pInputText [style]="{width: '25vw'}" />
+              </span>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-6">
+              <label for="" class="fw-semibold">Ticket No</label>
+              <span class="p-input-icon-left">
+                <i class="pi pi-ticket" style="font-size: 1rem"></i>
+                <input type="text" [(ngModel)]="TicketObj.TicketNo" pInputText [style]="{width: '25vw'}" />
+              </span>
+            </div>
+            <div class="col-6">
+              <label for="" class="fw-semibold">No Of Ticket</label>
+              <span class="p-input-icon-left">
+                <i class="pi pi-ticket"></i>
+                <input type="text" [(ngModel)]="TicketObj.NoOfTickets" pInputText [style]="{width: '25vw'}" />
+              </span>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-6">
+              <div class="flex-auto">
+                <label for="" class="fw-semibold">Ticket Date</label>
+                <p-calendar [(ngModel)]="TicketObj.Ticket_date" [style]="{width: '25vw'}" [iconDisplay]="'input'"
+                  [showIcon]="true" inputId="icondisplay"></p-calendar>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="" class="fw-semibold">Select Type</label>
+              <select name="" [(ngModel)]="TicketObj.Ticket_type" class="form-select form-select-lg" id="">
+                <option value="" selected disabled>select</option>
+                <option value="New Ticket">New Ticket</option>
+                <option value="close Ticket">close Ticket</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="d-grid col-6">
+              <button class="btn btn-danger btn-lg" (click)="reset_field()">Reset</button>
+            </div>
+            <div class="d-grid col-6">
+              <button class="btn btn-primary btn-lg" *ngIf="TicketObj.id==0"  (click)="submit_Ticket()">Submit
+                Ticket</button>
+              <button class="btn btn-primary btn-lg" *ngIf="TicketObj.id!=0" (click)="Update_Ticket()">Update
+                Ticket</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p-toast></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-confirmPopup></p-confirmPopup>

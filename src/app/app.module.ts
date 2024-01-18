@@ -31,7 +31,7 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
     ToastModule,
     ConfirmPopupModule
   ],
-  providers: [
+  providers: [MessageService,ConfirmationService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
